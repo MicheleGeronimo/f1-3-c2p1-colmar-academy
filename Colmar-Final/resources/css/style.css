@@ -1,0 +1,651 @@
+/***** Fonts *****/
+/* latin */
+@font-face {
+  font-family: 'Oswald';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Oswald Regular'), local('Oswald-Regular'), url(https://fonts.gstatic.com/s/oswald/v13/pEobIV_lL25TKBpqVI_a2w.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215;
+}
+/* latin */
+@font-face {
+  font-family: 'Oswald';
+  font-style: normal;
+  font-weight: 600;
+  src: local('Oswald SemiBold'), local('Oswald-SemiBold'), url(https://fonts.gstatic.com/s/oswald/v13/y5-5zezrZlJHkmIVxRH3BVtXRa8TVwTICgirnJhmVJw.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215;
+}
+/* latin */
+@font-face {
+  font-family: 'Oswald';
+  font-style: normal;
+  font-weight: 700;
+  src: local('Oswald Bold'), local('Oswald-Bold'), url(https://fonts.gstatic.com/s/oswald/v13/bH7276GfdCjMjApa_dkG6VtXRa8TVwTICgirnJhmVJw.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215;
+}
+/* latin */
+@font-face {
+  font-family: 'Merriweather';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Merriweather'), local('Merriweather-Regular'), url(https://fonts.gstatic.com/s/merriweather/v15/RFda8w1V0eDZheqfcyQ4EOgdm0LZdjqr5-oayXSOefg.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215;
+}
+/* latin */
+@font-face {
+  font-family: 'Merriweather';
+  font-style: normal;
+  font-weight: 700;
+  src: local('Merriweather Bold'), local('Merriweather-Bold'), url(https://fonts.gstatic.com/s/merriweather/v15/ZvcMqxEwPfh2qDWBPxn6nnNuWYKPzoeKl5tYj8yhly0.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215;
+}
+
+
+
+/***** Global Styles and Flex *****/
+
+/* Base for rem unit */
+html {
+  font-size: 16px;
+}
+
+/* Font and primary color for landing page */
+body {
+  font-family: "Oswald", sans-serif;
+  color: #909090;
+}
+
+.mobile {
+  display: none;
+}
+
+/* Sets background color for Banner, Learning Grid, and Footer */
+section:nth-child(2n + 1),
+footer {
+  background-color: #4C1316;
+}
+
+/* Sets space on all sides of banner, general info and thesis sections to meet spec requirements -- 32px top and bottom, right is 0px, left is 24px */
+.banner,
+.articles,
+.thesis {
+  padding: 2rem 0 2rem  1.5rem;
+}
+
+/* Sets width of main image or video in banner, general info and thesis sections */
+.feature {
+  width: 60%;
+}
+
+/* Makes width of featured image or video expand fully to fit 60% width of container in selector above */
+.feature img,
+video {
+  width: 100%;
+  height: auto;
+}
+
+/* Sets width of right hand side for articles and thesis */
+.right-side {
+  width: 40%;
+  }
+
+/* Sets width and border for general info articles and thesis */
+.single-right {
+  width: 100%;
+  border-bottom: 1px solid #FFFFFF;
+  padding-bottom: 1rem;
+}
+
+/* Makes top article image align with main left feature image.  Then, padding top continues with 2nd and 3rd articles */
+.single-right:nth-child(1n + 2) {
+  padding-top: 1rem;
+}
+
+/* Removes bottom border from bottom article */
+.single-right:last-child {
+  border: none;
+}
+
+/* Makes article images appear in separate lines verically and meet 35% spec requirement.  Sets margins-- space between article image and text. */
+.single-right img {
+  display: block;
+  width: 35%;
+  margin: 0 1rem;
+}
+
+/* Sets 32px space below items to meet spec requirements */
+.articles .feature img,
+.content p,
+.learning h1,
+.thesis h1 {
+  margin-bottom: 2rem;
+}
+
+/* Sets 24px space below items to meet spec requirements */
+.articles .feature h1,
+.thesis .feature h2,
+.thesis video {
+  margin-bottom: 1.5rem;
+}
+
+/* Sets color and line height of header 1 and header 2 */
+h1,
+h2 {
+  color: #414141;
+  line-height: 1.2;
+}
+
+/* Sets font size and weight of header 1 */
+h1 {
+  font-family: "Merriweather";
+  font-size: 2.9rem;
+  font-weight: 900;
+}
+
+/* Sets font size of header 2 */
+h2 {
+  font-size: 2rem;
+}
+
+/* Sets text color of h1 for banner and learning grid */
+.banner h1,
+.learning h1 {
+  color: #FFFFFF;
+}
+
+/* Sets text color of h1 for articles and thesis */
+.articles h1,
+.thesis h1 {
+  color: #4C1316;
+}
+
+/* Sets font size and weight of paragraph text */
+p {
+  font-size: 1.25rem;
+  font-weight: 300;
+  line-height: 1.35;
+  font-style: italic;
+}
+
+/* Sets size, weight and margin top for right hand articles, course grid and thesis exhibits */
+.excerpt,
+.read-more,
+.single-course {
+  font-size: 1.25rem;
+  font-weight: 300;
+  margin-top: .5rem;
+}
+
+/* Sets hover color for nav links in header */
+a:hover {
+  color: #B15C60;
+}
+
+/* Sets color for visited nav links in header */
+a:visited {
+  color: #B15C60;
+}
+
+/* Sets hover color for button in banner */
+.button:hover {
+  background-color: #B15C60;
+}
+
+/* Sets hover color for background of articles */
+.single-right:hover {
+  background-color: #E0E0E0;
+}
+
+/* Sets transition characteristics for hover properties */
+a,
+.button,
+.button h2,
+.single-right {
+  transition: color 150ms ease-in,
+              background-color 150ms ease-in;
+}
+
+/* Smartphones (portrait and landscape) -- GENERAL AND FEATURE IMAGES */
+@media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
+  html {
+    font-size: 14px;
+  }
+
+  .feature img {
+    display: none;
+  }
+
+  .banner .feature {
+    height: 180px;
+    width: 100%;
+    background-image: url(../images/banner.jpg);
+    background-repeat: no-repeat;
+    background-position: top;
+    background-size: cover;
+  }
+
+}
+
+/* Sets below as flex containers */
+header,
+.logo,
+.banner,
+.right-side,
+.button,
+.articles,
+.single-right,
+.single-right .content,
+.learning,
+.tracks,
+.thesis,
+.exhibits,
+footer {
+  display: flex;
+}
+
+/* Sets offset for fixed header */
+.main-content {
+  position: relative;
+  top: 4rem;
+}
+
+/* Makes right column items for general info and thesis stack vertically instead of horizontally */
+.right-side,
+.single-right .content,
+.learning,
+.thesis {
+  flex-direction: column;
+}
+
+/* Wraps Start Learning grid of courses */
+.tracks {
+  flex-wrap: wrap;
+}
+
+/* Centers banner content on right side and within button */
+.banner .right-side,
+.button,
+.single-right .content {
+  justify-content: center;
+}
+
+/* Sets proper spacing for header, footer, and Start Learning grid of courses horizontally */
+header,
+.tracks,
+footer {
+  justify-content: space-between;
+}
+
+/* Centers items vertically */
+header,
+.logo,
+.right-side,
+.button,
+.single-right,
+.learning,
+.thesis {
+  align-items: center;
+}
+
+
+
+/* Smartphones (portrait and landscape) -- ARTICLES */
+@media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
+    .desktop {
+      display: none;
+    }
+
+    .mobile,
+    ul {
+      display: flex;
+    }
+
+    .single-right,
+    .articles .right-side {
+      flex-direction: column;
+    }
+
+    ul {
+      align-items: center;
+    }
+
+    ul {
+      justify-content: space-between;
+    }
+}
+
+
+
+/***** Header including logo and nav links *****/
+
+/* Makes fixed header */
+header {
+  height: 4rem;
+  position: fixed;
+  z-index: 100;
+  width: 100%;
+  background-color: white;
+}
+
+/* Nav link font size and space to right of nav links in header */
+nav {
+  margin-right: 1.5rem;
+  font-size: 1.25rem;
+}
+
+/* Space in between nav links in header */
+nav li {
+  padding-left: 1rem;
+}
+
+/* Makes nav links align in same row instead of vertically */
+li {
+    display: inline;
+}
+
+/* Sets same color for Colmar in logo and nav links */
+.colmar,
+li a {
+  color: #4C1316;
+}
+
+/* Removes underline from text links in header */
+li a {
+  text-decoration: none;
+}
+
+/* Space to left of logo in header */
+.logo {
+  margin-left: 1.5rem;
+}
+
+/* Logo image in header */
+.logo img{
+  height: 3rem;
+  width: auto;
+}
+
+/* Sets font size for Colmar Academy text in header logo */
+.logo span {
+  font-size: 1.5rem;
+}
+
+/* Smartphones (portrait and landscape) -- HEADER AND ARTICLE WIDTH */
+@media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
+  nav {
+    width: 100%;
+  }
+}
+
+
+
+/***** Banner Section *****/
+
+/* Banner text to right side */
+.banner .right-side {
+  padding-left: 2.5rem;
+  width: 30%;
+}
+
+/* Space below banner text header and description */
+.banner h1,
+.banner h2 {
+  margin-bottom: 3rem;
+}
+
+/* Sets color for header 2 text in banner */
+.banner h2 {
+  color: #8C8C8C;
+}
+
+/* Banner button settings - background color, height, width, rounded corners */
+.button {
+  background-color: #000000;
+  border-radius: 7px;
+  height: 4rem;
+  width: 100%;
+}
+
+/* Button text settings */
+.button h2 {
+  color: white;
+  text-align: center;
+  margin-top: .5rem;
+  margin-bottom: .5rem;
+}
+
+/* Smartphones (portrait and landscape) -- BANNER */
+@media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
+  section.banner {
+  background-color: #4C1316;
+  display: block;
+  padding: 0;
+  }
+
+  .banner .right-side {
+    width: auto;
+    padding-bottom: 2.28571429rem;
+  }
+
+  .banner h1 {
+    padding-top: 2.28571429rem;
+    }
+
+  .button {
+    width: 95%;
+  }
+}
+
+
+/***** General Information and Section *****/
+
+/* Sets font size, weight and and color of author name for general information section */
+.author {
+  font-size: 1.25rem;
+  font-weight: 300;
+  color: #909090;
+  font-style: italic;
+}
+
+/* Sets border and left margin for general info articles */
+.articles .right-side {
+  border-left: 1px solid #FFFFFF;
+  margin-left: 1.5rem;
+}
+
+/* Makes sure won't display when in desktop mode */
+.articles .single-right img.mobile {
+  display: none;
+}
+
+/* Sets color of Read More link in articles */
+.read-more {
+  color: #4085f4;
+}
+
+.read-more:hover {
+  color: #4C1316;
+}
+
+/* Smartphones (portrait and landscape) -- ARTICLES */
+@media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
+  section.articles {
+    background-color: white;
+  }
+
+  .articles .feature {
+    display: none;
+  }
+
+  .articles .right-side {
+    margin: 0 auto;
+    padding: 1.143rem 1.143rem 2.286rem 1.143rem;
+    width: 100%;
+  }
+
+  .articles .single-right img.desktop {
+    display: none;
+  }
+
+  .articles .single-right img.mobile {
+    display: block;
+    width: 100%;
+  }
+
+  .articles .content {
+    width: 100%;
+    padding-top: 1.143rem;
+    padding-left: 1.143rem;
+  }
+
+  .excerpt,
+  .read-more {
+    font-size: 1rem;
+  }
+
+}
+
+
+/***** Start Learning Grid Section *****/
+
+/* Set padding at top and bottom around grid */
+.learning {
+  padding: 2rem 10rem;
+}
+
+/* Sets background color, width and margin under grid boxes */
+.single-track {
+  width: 32%;
+  background-color: #FFFFFF;
+  margin-bottom: 1rem;
+}
+
+/* Sets hover background color for grid boxes */
+.single-track:hover {
+  background-color: #E0E0E0;
+}
+
+/* Sets transition characteristics for background color of grid boxes */
+.single-track {
+  transition: background-color 150ms ease-in;
+}
+
+/* Sets image in grid boxes to span full width */
+.single-track img {
+  width: 100%;
+}
+
+/* Sets margins of content within grid boxes according to spec requirements */
+.single-track .content {
+  margin: 1rem 1rem 1.5rem 1rem;
+}
+
+/* Sets margin bottom of content within grid boxes according to spec requirements */
+.single-track .content h2,
+.single-track .content .single-course {
+  margin-bottom: .5rem;
+}
+
+/* Sets line height of course description in grid boxes */
+.single-track .excerpt {
+  line-height: 1.2;
+}
+
+
+/* Smartphones (portrait and landscape) -- LEARNING GRID */
+@media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
+  .learning {
+    margin: 0 auto;
+    padding: 2.286rem 1.143rem 2.286rem 1.143rem;
+    width: 100%;
+  }
+
+  .single-track {
+    width: 100%;
+  }
+
+  .single-track img,
+  .single-track .single-course,
+  .single-track .excerpt {
+    display: none;
+  }
+
+  .single-track .content {
+    margin: 1.143rem 0 1.143rem 1.143rem;
+  }
+
+  .single-track {
+    background-color: #d3d3d3;
+    margin-bottom: .571rem;
+  }
+
+  .single-track:last-child {
+    margin-bottom: 0;
+  }
+}
+
+
+
+/***** Thesis Exhibit Section *****/
+
+/*Sets margin left of thesis right side according to spec requirements */
+.exhibits .right-side {
+  margin-left: 1rem;
+}
+
+
+/* Smartphones (portrait and landscape) -- THESIS */
+@media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
+  section.thesis {
+      background-color: #f1f3f4;
+      padding: 0;
+  }
+
+  .thesis .right-side,
+  .thesis .content {
+    display: none;
+  }
+
+  .thesis h1 {
+    margin-top: 2.286rem;
+    margin-bottom: 2.286rem;
+  }
+
+  video {
+    width: 480px;
+  }
+}
+
+
+
+/***** Footer Section *****/
+
+/* Makes border above footer and sets padding according to spec requirements */
+footer {
+  border-top: 1px solid #FF0000;
+  padding: 1.5rem;
+  color: #B15C60;
+
+}
+
+/* Sets color of footer terms and privacy links */
+footer a {
+  font-size: 1rem;
+  color: #B15C60;
+}
+
+/* Smartphones (portrait and landscape) -- FOOTER */
+@media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
+  footer {
+    border: 0px;
+  }
+
+  footer .copy {
+    padding-top: 1.143rem;
+    padding-bottom: 1.143rem;
+  }
+
+  .terms {
+    display: none;
+  }
+}
